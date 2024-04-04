@@ -1,0 +1,246 @@
+// Bootstrap and its default variables
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Your style
+@import "variables";
+@import "mixins";
+@import "general";
+@import "layout";
+
+/* CUSTOM STYLES
+-------------------------------------------------- */
+//Smooth Scroll
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  body {
+    @include font-family($primary-font);
+    @include background-color($theme-background-color);
+    @include text-color($theme-text-color);
+    overflow-x: hidden
+  }
+}
+
+// style for top navbar
+.top-header {
+  &--primary {
+    @include background-color($primary);
+  }
+}
+.shape-bg {
+  min-height: calc(100vh - -5em);
+  @include border-radius(0, 0, 100%, 100%);
+  @include background-image(
+    linear-gradient(
+      to top,
+      #cad4fa,
+      #cedcfb,
+      #d3e4fc,
+      #dbebfd,
+      #e5f2fd,
+      #e9f4fd,
+      #eef7fe,
+      #f2f9fe,
+      #f1f8fe,
+      #eff8fd,
+      #eef7fd,
+      #edf6fd
+    )
+  );
+}
+.navbar-nav {
+  li {
+    &.active {
+      @include background-color($primary-light-dark);
+    }
+  }
+}
+.sidenav {
+  transition: 0.5s ease-in;
+  li {
+    @include border-radius(3px, 3px, 3px, 3px);
+    &:hover {
+      @include background-color($primary-light-dark);
+    }
+  }
+}
+.section-wrapper {
+  margin-top: 4rem;
+}
+
+.section-title{
+  .section-title-sub{
+   
+    max-width:  fit-content;
+    font-size: 3.5rem;
+    @include media-breakpoint-up(md) {
+      max-width: 70%;
+    }
+  }
+  .section-title-desc{
+    max-width:  fit-content;
+    @include media-breakpoint-up(md) {
+      max-width: 70%;
+    }
+
+  }
+
+  
+}
+
+.subslider-slider{
+  max-width:  fit-content;
+  @include media-breakpoint-up(md) {
+    max-width: 600px;
+    max-height: 400px;
+  }
+  .carousel-control-prev{
+    left:-40px ;
+   
+  }
+  .carousel-control-next{
+    right:-40px ;
+    
+  }
+  .carousel-indicators--position{
+    bottom: -40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    button{
+      width: 90%;
+    }
+    [data-bs-target] {
+      @include background-color($primary);
+    }
+  }
+  .carousel-inner{
+    .carousel-item{
+      img{
+        max-width: fit-content ;
+        height: 280px;
+        @include media-breakpoint-up(md) {
+          max-width: 600px;
+          max-height: 400px;
+          height: 400px;
+        }
+      }
+    }
+  }
+}
+.search-form{
+ width: 95%;
+ margin-top: 20px;
+  @include media-breakpoint-up(md) {
+    width: calc(100% - 90em);
+ 
+  }
+}
+.nav-tabs-link{
+  
+  &.active{
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-bottom:3px  solid !important;
+    @include text-color($primary);
+  }
+}
+.user-list{
+  img{
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+  }
+  .user-list-item{
+    &--shape{
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        margin-inline-start: -8px;
+       
+      img{
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+.slider-sponsers{
+  
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    @include media-breakpoint-up(md) {
+      overflow: hidden;
+    }
+}
+.fixed-container{
+ 
+  @include media-breakpoint-up(md) {
+   
+    margin-inline-start:calc(100% - 100em) ;
+  }
+}
+
+.slider-sponsers-card {
+ width: auto;
+  height: 400px;
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  overflow: hidden; 
+  @include media-breakpoint-up(md) {
+    width: 400px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include background-color(rgba(0, 0, 0, 0.3));
+   
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+
+.services{
+  @include background-color(rgb(226 222 222));
+  .service-title{
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.team-card{
+  @include border-radius(50px,280px,50px,50px);
+  width: 100%;
+}
+.blog-wrapper {
+  @include background-color($primary);
+  .blog-title{
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+  .indicator-blog{
+    height: 3px ;
+    bottom: -1rem;
+    width:100px;
+  }
+  
+}

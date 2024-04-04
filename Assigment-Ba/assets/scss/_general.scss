@@ -1,0 +1,109 @@
+// General Style
+// utitlities stye
+.-top-3{
+    top: -2.25rem
+}
+.-end-3{
+    right: -2rem
+}
+.my-6{
+    margin-top: 4rem;
+    margin-bottom: 4rem
+}
+.bg-primary{
+    background-color: $primary;
+}
+.font--md{
+font-size: calc(2.3rem + 0.6vw);
+}
+.icon--size--color{
+    @include icon-size-color(16px,#fff)
+}
+.text-main-color{
+    @include text-color($theme-text-color)
+}
+.text-main{
+    @include text-color($primary)
+}
+.border-radius{
+    @include border-radius(30px,30px,30px,30px);
+}
+
+.btn-primary{
+   
+    transition: 0.5s ease-in;
+    &--dark{
+        @include background-color($primary);
+        @include text-color(#fff);
+        &:hover{
+            @include background-color($primary-light);
+          
+        }
+        &:focus{
+            @include background-color($primary-light);
+           
+        }
+        &:active{
+            @include background-color($primary-light);
+           
+        }
+    }
+    
+    
+}
+
+.btn-outline{
+   
+    transition: 0.5s ease-in;
+    &--dark{
+        border-color: $primary ;
+        @include text-color($primary);
+        &:hover{
+            @include background-color($primary);
+            @include text-color(#fff);
+        }
+        &:focus{
+            @include background-color($primary);
+            @include text-color(#fff);
+           
+        }
+        &:active{
+            @include background-color($primary);
+            @include text-color(#fff);
+           
+        }
+    }
+    
+    
+}
+
+.carousel-control-prev-icon{
+    height: 3rem;
+    width: 3rem;
+    @include background-image(url('../../assets/img/next.svg'));
+    transform: rotate(-180deg);
+  }
+
+  .carousel-control-next-icon{
+    height: 3rem;
+    width: 3rem;
+    @include background-image(url('../../assets/img/next.svg'));
+  }
+
+  .input--text{
+    font-size: 1rem;
+  }
+
+  .circle-figure{
+    background-image: linear-gradient(to right top, #e5e9f7, #9ca6ea, #7578d7, #776be9, #5928ce);
+    border-radius: 100%;
+    &.small--figure{
+        width: 70px;
+        height: 70px;
+    }
+    &.large--figure{
+        width: 100px;
+        height: 100px;
+    }
+  }
+ 
